@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure App</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+
+      /* Animation */
+      animation: floatIn 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-10px);
+      }
+      80% {
+        transform: translateY(5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card h1 {
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 12px 24px;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Welcome to SecureApp</h1>
+    <a href="/register" class="btn">Register</a> <br />
+    <a href="/login" class="btn">Login</a>
+  </div>
+</body>
+</html>
