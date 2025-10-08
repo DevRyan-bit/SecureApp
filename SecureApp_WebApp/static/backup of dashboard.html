@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .card {
+            margin-top: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .message {
+            font-weight: bold;
+        }
+
+        .btn-danger {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card p-4">
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='images/' + user[2]) }}" class="profile-img mb-3" alt="Profile Photo">
+            <h4>{{ user[0] }}</h4> <!-- Full Name -->
+            <p>Email: {{ user[1] }}</p>
+            <p>Phone: {{ user[3] }}</p> <!-- Make sure this index matches your DB schema -->
+        </div>
+
+        {% if message %}
+            <div class="alert alert-success message">{{ message }}</div>
+        {% endif %}
+        {% if error %}
+            <div class="alert alert-danger message">{{ error }}</div>
+        {% endif %}
+
+        <hr>
+
+        <!-- Change Password -->
+        <h5>Change Password</h5>
+        <form method="POST" action="/dashboard/change-password">
+            <div class="mb-3">
+                <label for="current_password" class="form-label">Current Password</label>
+                <input type="password" name="current_password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_password" class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+        </form>
+
+        <hr>
+
+        <!-- Change Phone -->
+        <h5>Change Phone Number</h5>
+        <form method="POST" action="/dashboard/change-phone">
+            <div class="mb-3">
+                <label for="new_phone" class="form-label">New Phone Number</label>
+                <input type="text" name="new_phone" class="form-control" required pattern="\d{10}" title="Enter a 10-digit phone number">
+            </div>
+            <button type="submit" class="btn btn-secondary">Update Phone</button>
+        </form>
+
+        <hr>
+
+        <!-- Delete Account -->
+        <h5>Delete Account</h5>
+        <form method="POST" action="/dashboard/delete-account" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+            <button type="submit" class="btn btn-danger">Delete My Account</button>
+        </form>
+
+        <hr>
+        <a href="/" class="btn btn-link">Back to Home</a>
+    </div>
+</div>
+</body>
+</html> -->
